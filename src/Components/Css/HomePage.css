@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@500&display=swap');
+
+
+:root{
+  --mainTextColor:#241083c2;
+}
+.homePage {
+  height: 100vh;
+  width: 100%;
+  /* background: url(../Img/bg.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.imgSection {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  margin-left: 100px;
+  overflow: hidden;
+  box-shadow: -2px 5px 11px -5px #0a1226c4;
+}
+
+.imgSection img {
+  height: 300px;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* //********************TextSection *******************\\ */
+
+  .textSection {
+    height: 65vh;
+    width: 50%;
+    margin-right: 70px;
+    border-radius: 15px;
+    background-color: #45495b12;
+    backdrop-filter: blur(2px);
+    box-shadow: 2px 2px 1px #b4b9c21f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textBox{
+    width: 80%;
+    height: 80%;
+  }
+  
+  .textBox h1{
+    font-family: 'Noto Serif Hebrew', serif;
+    font-size: 2.6em;
+    letter-spacing: 1.5px;
+    color:var(--mainTextColor);
+    line-height: 2em;
+  }
+  .textBox h2{
+    font-family: 'Noto Serif Hebrew', serif;
+    font-size: 2.3em;
+    letter-spacing: 1px;
+    color:var(--mainTextColor);
+    line-height: 1.2em
+  }
+
+  .textBox h2 span{
+    color: #c8133b;
+    font-weight: 600;
+  }
+
+  .textBox p{
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #0a1226c4;
+  }
+
+  .textBox .btns{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .homePage .textSection .textBox .btns a{
+    padding: 8px 14px;
+    background-color: var(--mainTextColor);
+    color: #fff;
+    margin: 0 8px;
+    text-decoration: none;
+    font-family: 'Noto Serif Hebrew', serif;
+    border-radius: 4px;
+  }
+
+
+  /* ********* Responsive CSs ************** */
+
+  @media screen and (max-width: 1400px){
+    .homePage .textSection .textBox{
+      width: 90%;
+      height: 90%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .homePage .textSection .textBox h1{
+      font-size: 2.3em;
+      letter-spacing: 1.2px;
+      line-height: 1.6em;
+    }
+  }
+
+  @media screen and (max-width: 1200px){
+    .homePage .imgSection {
+      height: 300px;
+      width: 300px;
+    }
+
+    .homePage .textSection .textBox h1{
+      font-size: 2em;
+      letter-spacing: 1px;
+      line-height: 1.2em;
+    }
+
+    .homePage .textSection .textBox h2{
+      font-size: 1.8em;
+      letter-spacing: 1px;
+      line-height: 1em
+    }
+
+    .homePage .textSection .textBox p{
+      margin-top: 10px;
+      font-size: 1em;
+    }
+  
+    .homePage .textSection .textBox .btns{
+      margin-top: 20px;
+    }
+  
+    .homePage .textSection .textBox .btns a{
+      padding: 8px 14px;
+      margin: 0 8px;
+      border-radius: 4px;
+    }
+  }
+
+  @media screen and (max-width: 1000px){
+    .homePage .textSection{
+      height: 55vh;
+    }
+    .homePage .imgSection{
+      margin-left: 30px;
+    }
+    .homePage .textSection {
+      margin-right: 30px;
+    }
+
+    .homePage .textSection .textBox h1{
+      font-size: 1.8em;
+      line-height: 1em;
+    }
+
+    .homePage .textSection .textBox h2{
+      font-size: 1.4em;
+      letter-spacing: 1px;
+      line-height: 1em
+    }
+  }
+
+  @media screen and (max-width: 770px){
+
+    .homePage .imgSection{
+      height: 250px;
+      width: 250px;
+      margin-left: 18px;
+    }
+    .homePage .textSection{
+      height: 45vh;
+      margin-right: 18px;
+    }
+    .homePage .textSection .textBox h1{
+      font-size: 1.3em;
+      line-height: 1em;
+    }
+
+    .homePage .textSection .textBox h2{
+      font-size: 1em;
+      letter-spacing: .2px;
+      line-height: 1.2em;
+      font-weight: 400;
+    }
+
+    .homePage .textSection .textBox p{
+      font-size: .8em;
+    }
+
+    .homePage .textSection .textBox .btns a{
+      padding: 4px 8px;
+      margin: 0 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .swiper-button-next:after, .swiper-button-prev:after {
+      font-size: 35px !important;
+    }
+  }
+
+
+  @media screen and (max-width: 560px){
+    .homePage {
+      flex-direction: column;
+      justify-content: normal;
+    }
+
+    .homePage .imgSection{
+      height: 230px;
+      width: 230px;
+      margin-left: 0px;
+      margin-top: 125px;
+    }
+    .homePage .textSection{
+      margin-top: 30px;
+      height: 35vh;
+      width: 80%;
+      margin-right: 0px;
+    }
+  }
+
+  @media screen and (max-width: 300px){
+    .homePage .imgSection{
+      height: 200px;
+      width: 200px;
+    }
+
+    .homePage .textSection{
+      width: 90%;
+    }
+    
+  }

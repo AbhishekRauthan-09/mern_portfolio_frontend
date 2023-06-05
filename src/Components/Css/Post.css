@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.post-card{
+    height: 300px;
+    width: 250px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 1px 3px 6px #1b1a1f98;
+    border-radius: 4px;
+    border: 1px solid #8f8383cc;
+    transition: 0.3s;
+}
+.post-card:hover{
+    box-shadow: 1px 5px 8px #1b1a1f98;
+    transform: translateY(-4px);
+}
+
+.post-card .imgBox{
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+}
+
+.post-card .imgBox img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.post-content{
+    height: 40%;
+    overflow: hidden;
+}
+
+.post-content .post-header{
+    margin-top: 4px;
+    font-size: 1.1rem;
+    line-height: 22px;
+    text-decoration: none;
+    color: #1b1a1fc4;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+}
+
+.post-content .info{
+    font-size: .7rem;
+}
+
+.post-content .info .name-date-feild{
+    display: flex;
+    gap: .3rem;
+    color: #2e5bef;
+}
+
+.post-content .info .category{
+    color: #2e5bef;
+}
+
+.btn{
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn a{
+    text-decoration: none;
+    font-size: .8rem;
+    padding: 4px 12px;
+    background-color: #2e5bef;
+    color: #fff;
+}
+
+@media screen and (max-width: 650px) {
+    .post-card{
+        height: 250px;
+        width: 200px;
+    }
+    .post-card:hover{
+        box-shadow:  1px 3px 6px #1b1a1f98;
+        transform: none;
+    }
+
+    .post-content .post-header{
+        margin-top: 4px;
+        font-size: .65rem;
+        line-height: 22px;
+        font-weight: 400;
+    }
+    
+    .post-content .info{
+        font-size: .5rem;
+    }
+    
+    .post-content .info .name-date-feild{
+        gap: .3rem;
+    }
+
+    .btn{
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn a{
+        font-size: .5rem;
+        padding: 3px 12px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .post-card{
+        border-radius: 4px;
+        height: 180px;
+        width: 135px;
+    }
+    .post-card:hover{
+        box-shadow:  1px 3px 6px #1b1a1f98;
+        transform: none;
+    }
+
+    .post-content .post-header{
+        margin-top: 4px;
+        font-size: 8px;
+        line-height: 10px;
+        font-weight: 400;
+    }
+    
+    .post-content .info{
+        font-size: .4rem;
+    }
+    
+    .post-content .info .name-date-feild{
+        gap: .3rem;
+    }
+
+    .btn{
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn a{
+        font-size: .5rem;
+        padding: 3px 12px;
+    }
+}

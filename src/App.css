@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Anuphan', sans-serif;
+}
+
+.Error404Page{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Error404Page img{
+  height: 80%;
+  width: auto;
+}

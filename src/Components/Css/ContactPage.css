@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mainColor: #2e0dd5f0;
+}
+
+.contactPage {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.popUpBox {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 40px;
+  width: auto;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popUpBox span {
+  color: #fff;
+}
+
+.contactPage .contactBox {
+  min-height: 35vh;
+  min-width: 35%;
+  border-radius: 12px;
+  background-color: #6678e454;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.contactPage .contactBox h1 {
+  font-size: 2.3em;
+  color: #040309bd;
+  margin-bottom: 20px;
+}
+
+.contactPage .contactBox .txtBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  text-align: center;
+}
+
+.contactPage .contactBox .txtBox p {
+  font-weight: 500;
+  color: #040309bd;
+  font-size: 1em;
+}
+
+.contactPage .contactBox .txtBox p a {
+  text-decoration: none;
+  color: #d30af2e9;
+}
+
+.contactPage .contactBox .logoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.contactPage .contactBox .logoBox .items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 12px;
+}
+
+.contactPage .contactBox .logoBox .items ion-icon {
+  font-size: 2.8em;
+  color: #1b1b2fc8;
+  transition: 0.3s;
+}
+
+.contactPage .contactBox .logoBox .items ion-icon:hover {
+  color: var(--mainColor);
+  transform: scale(1.15);
+}
+
+.contactPage .contactBox .logoBox .items ion-icon:active {
+  color: var(--mainColor);
+}
+
+.contactPage .contactBox .logoBox .items p {
+  color: #040309bd;
+  font-size: 14px;
+}
+
+.messageBox {
+  height: 65vh;
+  min-width: 25%;
+  background-color: #6678e454;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 18px;
+  flex-direction: column;
+}
+
+.messageBox h3 {
+  color: #db18ecea;
+  margin-bottom: 18px;
+}
+
+.messageBox form {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.messageBox form .boxes {
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.messageBox form .boxes span {
+  font-size: 0.9rem;
+  color: #111015ea;
+  color: #5849a1;
+}
+
+.messageBox form .boxes input {
+  width: 300px;
+  padding: 4px 9px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #5849a1;
+  color: #b112ddf8;
+  font-size: 1rem;
+  position: relative;
+}
+
+.messageBox form button {
+  padding: 6px 20px;
+  margin-top: 14px;
+  background-color: #5849a1;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ********** Responsive Css *********** */
+
+@media screen and (max-width: 800px) {
+  .contactBox {
+    margin-top: 80px;
+  }
+
+  .messageBox {
+    margin: 25px 15px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .contactPage .contactBox {
+    height: 45vh;
+    width: 50vh;
+    padding-top: 25px;
+  }
+
+  .contactPage .contactBox h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .contactPage .contactBox .logoBox .items {
+    margin: 0 12px;
+  }
+
+  .contactPage .contactBox .logoBox .items ion-icon {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .contactPage .contactBox {
+    width: 75%;
+    padding-top: 5px;
+  }
+
+  .contactPage .contactBox h1 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+  }
+
+  .contactPage .contactBox .txtBox p {
+    font-size: 15px;
+  }
+
+  .contactPage .contactBox .logoBox .items {
+    margin: 5px 8px;
+  }
+
+  .contactPage .contactBox .logoBox .items ion-icon {
+    font-size: 2.5em;
+  }
+
+  .messageBox {
+    height: 55vh;
+  }
+
+  .messageBox form .boxes {
+    margin: 4px 0;
+  }
+
+  .messageBox form .boxes span {
+    font-size: 0.8rem;
+  }
+
+  .messageBox form .boxes input {
+    width: 200px;
+    padding: 3px 6px;
+  }
+
+  .popUpBox {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    padding: 6px 10px;
+    font-size: 12px;
+    background-color: #2b2063;
+  }
+
+  .popUpBox span {
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .contactPage .contactBox {
+    height: auto;
+    width: 80%;
+    overflow: hidden;
+  }
+
+  .contactPage .contactBox h1 {
+    font-size: 1.3em;
+  }
+
+  .contactPage .contactBox .txtBox p {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  .contactPage .contactBox .logoBox {
+    margin-top: 10px;
+  }
+
+  .contactPage .contactBox .logoBox .items {
+    margin: 5px 8px;
+  }
+
+  .contactPage .contactBox .logoBox .items ion-icon {
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (max-width: 290px) {
+  .messageBox {
+    height: 55vh;
+  }
+
+  .messageBox form .boxes span {
+    font-size: 0.8rem;
+  }
+
+  .messageBox form .boxes input {
+    width: 160px;
+    font-size: 0.8rem;
+    padding: 3px 6px;
+  }
+
+  .messageBox form button {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primaryCol:#3112d0e8;
+}
+
+.myWorksPage{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    flex-wrap: wrap;
+}
+
+.container{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    flex-wrap: wrap;
+    margin-top: 10vh;
+}
+
+
+.card{
+    min-height: 450px;
+    width: 330px;
+    /* border: 1px solid var(--primaryCol); */
+    box-shadow: 0px 1px 3px #3112d0e8;
+    padding: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 15px 25px;
+}
+
+.card .imgbox{
+    height: 220px;
+    overflow: hidden;
+}
+
+.card .imgbox img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card .textBox{
+    padding: 5px 3px;
+    width: 100%;
+    height: 100%;
+}
+
+.card .textBox h4{
+    font-size: 1.2em;
+    margin-top: 4px;
+    color: var(--primaryCol);
+}
+
+.card .textBox p{
+    margin-top: 4px;
+    font-size: 1em;
+    line-height: 25px;
+}
+
+.card h5{
+    text-align: center;
+}
+
+.card  a{
+    display: inline-block;
+    padding: 5px 18px;
+    background-color: var(--primaryCol);
+    color: #ffff;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* *********** Responsive Css ******* */
+
+@media screen and (max-width: 550px) {
+    .card{
+        min-height: 220px;
+        width: 270px;
+    }
+
+    .myWorksPage div h1{
+        font-size: 1.5em;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card{
+        min-height: 200px;
+        width: 200px;
+    }
+
+    .card .imgbox{
+        height: 140px;
+    }
+    
+    .card .textBox h4{
+        font-size: 1em;
+    }
+    
+    .card .textBox p{
+        font-size: .7em;
+    }
+
+    .card  a{
+        padding: 3px 13px;
+        margin: 8px 0;
+        font-size: 11px;
+    }
+
+    .myWorksPage div h1{
+        font-size: 1em;
+        padding: 5px 8px;
+    }
+}
+

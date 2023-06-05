@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@500&display=swap");
+
+:root {
+  --AboutPageMainTextColor: #fff;
+  --bgColor: #241083c2;
+  --progressCol: #2e0dd5f0;
+}
+
+.AboutPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.AboutPage .firstSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-top: 90px;
+}
+
+.AboutPage .firstSection h1 {
+  position: absolute;
+  font-size: 3em;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--bgColor);
+  top: 0;
+}
+
+.AboutPage .firstSection .box {
+  width: auto;
+  min-height: 150px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--bgColor);
+  margin: 0px 40px;
+}
+
+.AboutPage .firstSection .box h3 {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: var(--AboutPageMainTextColor);
+  margin: 3px 0;
+}
+
+h1 {
+  font-family: "Noto Serif Hebrew", serif;
+}
+
+.AboutPage .firstSection .box h3 a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+/* secondSection css ************************ */
+
+.AboutPage .secondSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 80px;
+  flex-wrap: wrap;
+}
+
+.progress {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  color: #06051f;
+  background: #fff
+    linear-gradient(to right, transparent 50%, var(--progressCol) 0);
+  box-shadow: 0px 0px 9px 1px #331c1c;
+  margin: 10px 8px;
+}
+
+.progress h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  font-size: 2em;
+}
+
+.progress h5 span {
+  font-size: 22px;
+}
+
+.progress h4 {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 500;
+  color: var(--progressCol);
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.progress::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+
+.progress::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  background-color: #f7f7f7;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1.3px #331c1c;
+}
+
+.progress::before {
+  background-color: var(--progressCol);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+
+.progress.less::before {
+  background-color: #fff;
+  transform: rotate(calc((var(--i) - 0) * 0.01turn));
+}
+
+/* ************* ResponsiveNess *************** */
+@media screen and (max-width: 1500px) {
+  .AboutPage .firstSection h1 {
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    top: 50px;
+  }
+
+  .AboutPage .firstSection {
+    padding-top: 110px;
+  }
+
+  .AboutPage .secondSection {
+    margin-top: 45px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .AboutPage .firstSection {
+    padding-top: 120px;
+  }
+  .AboutPage .firstSection h1 {
+    top: 60px;
+  }
+
+  .AboutPage .firstSection .box h3 {
+    font-weight: 400;
+    font-size: 1em;
+    margin: 3px 0;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .AboutPage .firstSection h1 {
+    font-size: 1.8em;
+    top: 70px;
+  }
+
+  .progress {
+    width: 120px;
+    height: 120px;
+  }
+
+  .progress h5 {
+  transform: translate(-50%, -70%);
+    font-size: 1.8em;
+  }
+  
+  .progress h5 span {
+    font-size: 20px;
+  }
+  
+  .progress h4 {
+    font-size: .8em;
+  }
+  
+.progress::after {
+  inset: 7px;
+}
+
+.AboutPage .firstSection .box {
+  margin: 0 15px;
+  padding: 10px;
+}
+.AboutPage .firstSection .box h3 {
+  font-weight: 400;
+  font-size: 1em;
+  margin: 1px 0;
+}
+}
+
+
+@media screen and (max-width: 550px) {
+
+  .AboutPage .firstSection h1 {
+    top: 80px;
+  }
+
+  .AboutPage .firstSection {
+    flex-direction: column;
+  }
+
+  .AboutPage .firstSection .box {
+    width: 80%;
+    margin: 10px 0px;
+    padding: 15px;
+    min-height: auto;
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+  .progress {
+    width: 100px;
+    height: 100px;
+  }
+
+  .progress h5 {
+  transform: translate(-50%, -70%);
+    font-size: 1.6em;
+  }
+  
+  .progress h4 {
+    font-size: .6em;
+  }
+  
+.progress::after {
+  inset: 5px;
+}
+}
