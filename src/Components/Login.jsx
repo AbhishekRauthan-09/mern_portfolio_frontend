@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState , useEffect } from "react";
 import "./Css/ContactPage.css";
 import styled from "styled-components";
 import { loginRoute, signupRoute } from "./utills/APIroutes";
@@ -22,23 +22,32 @@ const Login = () => {
     newestOnTop: false,
   };
 
+  useEffect(()=>{
+    const setUser = async () => {
+      if (localStorage.getItem("blog-app-user")) {
+        navigate("/");
+      }else{
+        setUserInfo({})
+      }
+    };
+    setUser();
+  },[])
+
   const loginForm = async (e) => {
     e.preventDefault();
-    const res = await axios.post(
-      loginRoute,
-      { username, password },
-      {
-        method: "POST",
-        withCredentials: true,
-      }
-    );
-
-    if (res.data.success === true) {
-      const { id, jwt } = res.data;
-      const resUsername = res.data.username;
-      setUserInfo({ id, jwt, resUsername });
-      toast.success(res.data.msg, toastOptions);
-      navigate('/createpost')
+    const res = await axios.post(loginRoute, {username , password}, {
+      withCredentials: true,
+      credentials: "include",
+    });
+    if (res.data.success !== false) {
+      toast.success("User founded with these credentials", toastOptions);
+      const data = res.data;
+      const userData = JSON.stringify(data);
+      localStorage.setItem("abhishek-rauthan", userData);
+      setUserInfo(data)
+      navigate("/");
+    } else {
+      toast.error(res.data.msg, toastOptions);
     }
   };
 

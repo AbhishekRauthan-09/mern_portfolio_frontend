@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState ,useEffect } from "react";
 import styled from "styled-components";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -42,17 +42,29 @@ const formats = [
 ];
 
 const CreatePost = () => {
-  const {userInfo} = useContext(UserContext)
+  const {userInfo , setUserInfo} = useContext(UserContext)
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [content, setContent] = useState("");
   const [files, setFiles] = useState("");
   const navigate = useNavigate();
   const [category, setCategory] = useState(null);
+  const [currentUser,setCurrentUser] = useState(null);
 
-  if(!userInfo.id){
-    navigate('/login')
-  }
+
+  useEffect(() => {
+    const setUser = async () => {
+      if (!localStorage.getItem("abhishek-rauthan")) {
+        navigate("/login");
+      } else {
+        const getuser = JSON.parse(localStorage.getItem("abhishek-rauthan"));
+        setCurrentUser(getuser);
+        console.log("userinfo is",userInfo);
+        setUserInfo(getuser);
+      }
+    };
+    setUser();
+  }, []);
 
   // Validations
   const [validTitle, setValidTitle] = useState(null);
@@ -90,6 +102,7 @@ const CreatePost = () => {
       data.set("content", content);
       data.set("file", files[0]);
       data.set("category", category);
+      data.set("jwttoken", currentUser.jwttoken);
       console.log("Files is :", files[0]);
       const res = await axios.post(createPostRoute, data, {
         withCredentials: true,

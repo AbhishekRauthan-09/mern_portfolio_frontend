@@ -51,11 +51,10 @@ const AboutPage = () => {
           <h4>NodeJs</h4>
         </div>
         
-        <div className="progress less" style={{"--i":40,"clr":"#43f94a;"}}>
-          <h5>40<span>%</span></h5>
-          <h4>PHP</h4>
+        <div className="progress less" style={{"--i":30,"clr":"#43f94a;"}}>
+          <h5>35<span>%</span></h5>
+          <h4>Express</h4>
         </div>
-
       </div>
     </div>
   )

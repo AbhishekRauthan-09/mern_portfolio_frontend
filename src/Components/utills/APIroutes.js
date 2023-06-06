@@ -1,5 +1,5 @@
-// export const host = 'http://localhost:5000'
-export const host = 'https://mern-portfolioapp-backend.onrender.com'
+export const host = 'http://localhost:5000'
+// export const host = 'https://mern-portfolioapp-backend.onrender.com'
 
 export const createPostRoute = `${host}/post`
 export const viewpostRoute = `${host}/post`

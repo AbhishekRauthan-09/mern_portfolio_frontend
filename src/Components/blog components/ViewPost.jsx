@@ -19,10 +19,25 @@ const toastOptions = {
 
 const ViewPost = () => {
   const navigate = useNavigate();
-  const { userInfo } = useContext(UserContext);
+  const { userInfo , setUserInfo} = useContext(UserContext);
   const [postInfo, setPostInfo] = useState({});
   const { id } = useParams();
   console.log("id is", id)
+
+
+  useEffect(() => {
+    const setUser = async () => {
+      if (!localStorage.getItem("abhishek-rauthan")) {
+        navigate("/login");
+      } else {
+        const getuser = JSON.parse(localStorage.getItem("abhishek-rauthan"));
+        // setCurrentUser(getuser);
+        console.log("userinfo is",userInfo);
+        setUserInfo(getuser);
+      }
+    };
+    setUser();
+  }, []);
 
   useEffect(() => {
     const showPost = async () => {
@@ -41,7 +56,7 @@ const ViewPost = () => {
     const res = await axios.post(deleteRoute, { id: postInfo._id });
     if (res.data.success !== false) {
       toast.success(res.data.msg, toastOptions);
-      navigate("/");
+      navigate("/myblogs");
     } else {
       toast.error(res.data.msg, toastOptions);
     }
@@ -62,7 +77,7 @@ const ViewPost = () => {
               </span>
             </p>
             <p className="category">Category - {postInfo.category}</p>
-            {userInfo.id === postInfo.createrId && (
+            {userInfo._id === postInfo.createrId && (
               <>
                 <div className="btns">
                   <Button variant="outlined" onClick={editPost}>
